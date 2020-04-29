@@ -1,5 +1,6 @@
 <h1><%= @cocktail.name %></h1>
-
+<%= link_to "Delete", cocktail_path(@cocktail), method: :delete %>
+<br><br>
 <% if @cocktail.photo.attached? %>
   <%= cl_image_tag @cocktail.photo.key, height: 300, width: 400, crop: :fill %>
 <% end %>
@@ -7,7 +8,7 @@
 <% @cocktail.doses.each do |dose| %>
   <p><%= dose.description %> of <%= dose.ingredient.name %> | <%= link_to 'DELETE', dose_path(dose), method: 'delete' %></p>
 <% end %>
-
+<br><br>
 <h4>Is there something missing?</h4>
 <p>If something is missing, you can add a new dose to our cocktail.</p>
 <%= simple_form_for [@cocktail, @dose] do |f| %>
