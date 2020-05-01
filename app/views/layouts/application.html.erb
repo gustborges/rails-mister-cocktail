@@ -12,6 +12,17 @@
   </head>
 
   <body>
-    <%= yield %>
+    <nav class="navbar navbar-light bg-light">
+      <%= image_tag "logo", alt: "alttext", height: 60, class: "d-inline-block align-top" %>
+        Pessymus Cocktails
+      </nav>
+
+    <header>
+      <div class="banner d-flex flex-column justify-content-center align-items-center">
+        <h1>Chegou Pessymus Cocktails</h1>
+        <h2>Porque coquetel bom mesmo é coquetel barato</h2>
+      </div>
+    </header>
+      <%= yield %>
   </body>
 </html>
